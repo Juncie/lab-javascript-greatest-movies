@@ -1,7 +1,4 @@
 // Iteration 1: All directors? - Get the array of all directors.
-// _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
-
-// How could you "clean" a bit this array and make it unified (without duplicates)?
 function getAllDirectors(array) {
   let directorNames = array.map((eachMovie) => {
     return eachMovie.director;
@@ -28,9 +25,9 @@ function scoresAverage(array) {
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore(array) {
+function dramaMoviesScore(arr) {
 
-  let dramaMovies = array.filter((eachMovie) => {
+  let dramaMovies = arr.filter((eachMovie) => {
     return eachMovie.genre.includes('Drama');
   })
 
@@ -38,25 +35,11 @@ function dramaMoviesScore(array) {
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(array) {
-  return array.sort((a, b) => {
+function orderByYear(arr) {
+  return arr.sort((a, b) => {
     return a.year - b.year
   })
 }
-
-// Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-// function orderAlphabetically(array) {
-//   let variable = array.sort((a, b) => {
-//     if (a.title < b.title) {
-//       return -1
-//     } else if (a.title > b.title) {
-//       return 1
-//     } else {
-//       return 0
-//     }
-//   })
-// return variable.slice(0,20)
-// }
 
 const orderAlphabetically = (array) => array.sort((a,b)=> a.title.localeCompare(b.title)).slice(0,20)
 
